@@ -49,3 +49,22 @@ function reverseIndex(){
 
 //back home page button click function
 // 1:22:00
+
+const backHomeBtn = document.querySelector('.back-home');
+
+backHomeBtn.onclick = () => {
+    pages.forEach((_, index) => {
+        setTimeout(() => {
+            reverseIndex();
+            pages[pageNumber].classList.remove('turn');
+
+            setTimeout(() => {
+                reverseIndex();
+                pages[pageNumber].style.zIndex = 10 + index;
+            },500)
+        }, (index + 1) * 200 + 100)
+    })
+}
+
+
+//1:25:00
